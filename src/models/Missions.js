@@ -5,8 +5,12 @@ export const MissionsSchema = new Schema(
   {
     codename: { type: String, required: true, minLength: 3, maxLength: 50 },
     objective: { type: String, required: true, minLength: 3, maxLength: 50 },
-    year: { type: Number, required: true, min: 0, max: 4892 },
-    completed: { type: Boolean, required: true }
+    year: { type: String, min: 1000, max: 2024, required: true },
+    completed: { type: Boolean, default: false, required: true }
+  },
+  {
+    timestamps: true,
+    toJSON: { virtuals: true }
   }
 )
 
