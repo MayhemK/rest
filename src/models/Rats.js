@@ -12,3 +12,4 @@ export const RatsSchema = new Schema(
     toJSON: { virtuals: true }
   }
 )
+

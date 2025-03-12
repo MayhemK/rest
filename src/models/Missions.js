@@ -11,4 +11,17 @@ export const MissionsSchema = new Schema(
 )
 
 
-MissionsSchema.virtual('rat')
+MissionsSchema.virtual('rat', {
+  ref: 'Rats',
+  localField: 'ratId',
+  foreignField: '_id',
+  justOne: true
+}
+)
+
+MissionsSchema.virtual('location', {
+  ref: 'Locations',
+  localField: 'locationId',
+  foreignField: '_id',
+  justOne: true
+})
